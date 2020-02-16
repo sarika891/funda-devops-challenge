@@ -19,7 +19,7 @@
  sudo chown -R prometheus:prometheus /etc/prometheus/console_libraries
  rm -rf prometheus-2.16.0.linux-amd64.tar.gz prometheus-2.16.0.linux-amd64
  sudo cp ./prometheus.yml /etc/prometheus/prometheus.yml 
- sudo cp ./alertrules.yml /etc/prometheus/alertrule.yml 
+ sudo cp ./alertrule.yml /etc/prometheus/alertrule.yml 
  sudo chown prometheus:prometheus /etc/prometheus/prometheus.yml
  sudo -u prometheus /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --web.enable-lifecycle &
  
@@ -36,6 +36,6 @@
  sudo mkdir /etc/alertmanager
  sudo chown alertmanager:alertmanager /etc/alertmanager
  rm -rf alertmanager-0.20.0.linux-amd64 alertmanager-0.20.0.linux-amd64.tar.gz
- sudo cp ./alertmanager.yml /etc/alertmanager/alertmanager.yml
- sudo /usr/local/bin/alertmanager --config.file /etc/alertmanager/alertmanager.yml --web.external-url http://localhost:9093 &
+ sudo cp ./alertmanager.yaml /etc/alertmanager/alertmanager.yaml
+ sudo /usr/local/bin/alertmanager --config.file /etc/alertmanager/alertmanager.yaml --web.external-url http://localhost:9093 &
 
