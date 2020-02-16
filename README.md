@@ -22,6 +22,7 @@ After running you can check in browser below url if its showing some metrics or 
   **http://serverip:9384/metrics**
 	
  #### Setup prometheus/alertmanager
+**_Change directory to funda-devops-challenge where all files are present_**
  
 Run **bash setup.sh** (some commands need sudo access so make sure you have proper permission prior to run this)
 This script will do below:
