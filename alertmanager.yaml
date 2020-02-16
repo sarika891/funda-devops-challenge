@@ -1,0 +1,22 @@
+global:
+   smtp_smarthost: 'localhost:25'
+   smtp_from: 'alertmanager@gmail.com'
+   smtp_require_tls: false
+
+route:
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 12h
+  receiver: devops
+  routes:
+  - match:
+      team: devops
+    repeat_interval: 5m
+    receiver: devops
+    
+receivers:
+
+- name: devops
+  email_configs:
+    - to: sarikachawla89@gmail.com
+    
