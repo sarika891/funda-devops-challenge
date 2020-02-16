@@ -38,7 +38,7 @@ This script will do below:
 ## How it works:
 
 1. We need to ask different teams to fill the data inside **_data.txt_** where we ask them to provide queuenames(support comma seperated list), metrics they want us to monitor(exposed by sqs-exporter) other specific alert informations.
-2. After we get the information, we just need to run ```bash setup-alert.sh``` which do the following:
+2. After we get the information, we just need to run **bash setup-alert.sh** which do the following:
    - **Queue creation**: First it will check the paramter newsetup from *data.txt* which will decide whether we need to create the queue or not.I have created the small cft (**sqs-create.yml**) which create standard queues only for now.If this paramter is **true** then we will create the queues(by running newqueue.sh) by using default cft as template and wait for 30s to complete this step.
    - **Alert creation**: Once we are done with the queue creation we proceed and start creating alerts according to the configuration provided like if there are two queues defined and metric names are also there then it will create two alerts for one queue means in total 4 different alerts with other configurations like teamname,teamemail,threshold,operator.
        - For this we are using template files (rules.yml) and ( route.yml) which keeps on adding information as per the conmfiguration provided and finally merge all the rules and routes to main prometheus alert file and alertmanager alert file under /etc.
