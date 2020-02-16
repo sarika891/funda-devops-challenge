@@ -7,7 +7,8 @@ I have used prometheus/alertmanager along with sqs-exporter provided by promethe
 ## Assumptions:
 1. Docker is pre installed.
 2. OS: Ubuntu
-3. awscli configured on the system wth proper rights to run cloud formation and creating queues in sqs.
+3. awscli configured on the system wth proper rights(aws access key and secret key) to run cloud formation and creating queues in sqs.
+4. Please make sure to update the email address in alertmanager.yaml before proceeding.
 
 
 ## Installation:
