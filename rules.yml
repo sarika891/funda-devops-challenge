@@ -1,0 +1,10 @@
+    - alert: Error In queue #queue#
+      expr: sum(sqs_#metric#{queue=~".*#queue#*"}) by (queue) #operator# #thresholdvalue#
+      for: 2m
+      labels:
+        severity: #severity#
+        team: #teamname#
+      annotations:
+        description: '{{ $labels.queue }} has errors, needs to be checked. '
+        summary: '{{ $labels.queue }} has errors, needs to be checked.'
+                                                                                                

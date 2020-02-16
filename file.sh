@@ -1,0 +1,9 @@
+newsetup=true
+queuetype=standard
+queuename=simplequeue,test-devops-queue
+metric=approximatenumberofmessages,approximatenumberofmessagesdelayed
+operator='>'
+thresholdvalue=1
+severity=critical
+teamemail=sarikachawla89@gmail.com
+teamname=devops1

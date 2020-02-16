@@ -1,0 +1,11 @@
+  - match:
+      team: #teamname#
+    repeat_interval: 5m
+    receiver: #teamname#
+    
+    
+receivers:
+- name: #teamname#
+  email_configs:
+    - to: #teamemail#
+    
