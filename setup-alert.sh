@@ -1,5 +1,5 @@
 #!/bin/bash
-exec 1> command.log 2>&1
+exec 1> setup-alert.log 2>&1
 set -x
 
 grep : data.txt | sed s/:/=/g  > file.sh
