@@ -19,7 +19,7 @@ I have used prometheus/alertmanager along with sqs-exporter provided by promethe
  ```
  
 After running you can check in browser below url if its showing some metrics or not.
-  **http://localhost:9384/metrics**
+  **http://serverip:9384/metrics**
 	
  #### Setup prometheus/alertmanager
  
@@ -32,8 +32,8 @@ This script will do below:
    - Default alertmanager.yml is configured with default receiver as devops team which receive all the alerts.
    - Default alertrules.tml is configured to monitor all the error queues(with error in the name) and send alerts to devops team.
 
-**http://localhost:9090 :prometheus**  
-**http://localhost:9093 :alertmanager**
+**http://serverip:9090 :prometheus**  
+**http://serverip:9093 :alertmanager**
 
 ## How it works:
 
@@ -44,9 +44,9 @@ This script will do below:
        - For this we are using template files (rules.yml) and ( route.yml) which keeps on adding information as per the conmfiguration provided and finally merge all the rules and routes to main prometheus alert file and alertmanager alert file under /etc.
    - **Configuration check** : Once everything is done, we check the alertmanager configuration using **_amtool_** and **_promtool_** to see if everything looks ok if not script stops there and give error. On success we proceed and reload the config by sending POST request to reload api of alertmanager and prometheus using below:
    
-**curl -X POST http://localhost:9090/-/reload  # prometheus config**
+**curl -X POST http://serverip:9090/-/reload  # prometheus config**
 
-**curl -X POST http://localhost:9093/-/reload  # alertmanager config**
+**curl -X POST http://serverip:9093/-/reload  # alertmanager config**
 
 ### On completion of above script you can see new alerts in prometheus and also new routes as well
 
