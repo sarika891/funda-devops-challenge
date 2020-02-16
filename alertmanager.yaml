@@ -18,5 +18,5 @@ receivers:
 
 - name: devops
   email_configs:
-    - to: sarikachawla89@gmail.com
+    - to: devops@funda.com
     
