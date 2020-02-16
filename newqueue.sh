@@ -15,10 +15,12 @@ do
 	  echo "creating new queue"
 	  sed  s/#queuename#/$i/g sqs-cft.yml > sqs-cft.$i.yml
 	  #check if there is any existing stack with the same name present
+	  j=$i
+	  i=`echo $i | sed s/_/-/g` #fixing stack name contraints
 	  `aws cloudformation describe-stacks --stack-name $i-sqs-create`
 	  if [ $? != 0 ]; then
              echo "Creating queue"
-	     `aws cloudformation create-stack --stack-name $i-sqs-create --template-body file://sqs-cft.$i.yml`
+	     `aws cloudformation create-stack --stack-name $i-sqs-create --template-body file://sqs-cft.$j.yml`
               sleep 20s
            else
 		echo "CFT with the same name already exists"  
