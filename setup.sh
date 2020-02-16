@@ -27,6 +27,7 @@
   #Installing alertmanagers
  echo "start installing alertmanager"
  cd ~
+ sudo useradd --no-create-home --shell /bin/false alertmanager
  curl -LO https://github.com/prometheus/alertmanager/releases/download/v0.20.0/alertmanager-0.20.0.linux-amd64.tar.gz
  tar xvf alertmanager-0.20.0.linux-amd64.tar.gz
  sudo mv alertmanager-0.20.0.linux-amd64/alertmanager /usr/local/bin
