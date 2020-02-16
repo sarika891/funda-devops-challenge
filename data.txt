@@ -5,16 +5,16 @@ newsetup:true
 queuetype:standard
 
 ## Name of the queue ##
-queuename:simplequeue,test-devops-queue
+queuename:test_devops_stats_phone_clicks,test_devops_stats_facebook_clicks
 
 ## You can choose any of approximatenumberofmessages, approximatenumberofmessagesdelayed, approximatenumberofmessagesnotvisible ###
-metric:approximatenumberofmessages,approximatenumberofmessagesdelayed
+metric:approximatenumberofmessages
 
 ## You can choose greater-than(>) or less-than(<) or equal(=).Please enter only sign not the string ###
 operator:'>'
 
 ## you can choose any value in number.Default is 5##
-thresholdvalue:1
+thresholdvalue:25
 
 ## Enter the severity value either critical or warning ##
 severity:critical
