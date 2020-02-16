@@ -1,0 +1,26 @@
+#true is you need us to create a queue or false if its already there in sqs
+newsetup:true
+
+## Type of queue only valid if its new setup else leave this as default.As of now we only support standard queues  ##
+queuetype:standard
+
+## Name of the queue ##
+queuename:simplequeue,test-devops-queue
+
+## You can choose any of approximatenumberofmessages, approximatenumberofmessagesdelayed, approximatenumberofmessagesnotvisible ###
+metric:approximatenumberofmessages,approximatenumberofmessagesdelayed
+
+## You can choose greater-than(>) or less-than(<) or equal(=).Please enter only sign not the string ###
+operator:'>'
+
+## you can choose any value in number.Default is 5##
+thresholdvalue:1
+
+## Enter the severity value either critical or warning ##
+severity:critical
+
+## Enter the team email alias ###
+teamemail:sarikachawla89@gmail.com
+
+## enter the team name ###
+teamname:devops1
