@@ -28,9 +28,9 @@ This script will do below:
 1. Install prometheus and alertmanager
 2. Create directories /etc/prometheus and /etc/alertmanager with default prometheus.yml,alertrules.yml and alertmanager.yml present under this github project
 3. After script executed successfully you can check if you are able to reach prometheus and alertmanager as mentioned below.See description of default files.
-   - Default prometheus.yml is configured to scrape metrics from sqs-exporter running on port 9384 and self metrics as well.
-   - Default alertmanager.yml is configured with default receiver as devops team which receive all the alerts.
-   - Default alertrules.tml is configured to monitor all the error queues(with error in the name) and send alerts to devops team.
+   - **prometheus.yml:** is configured to scrape metrics from sqs-exporter running on port 9384 and self metrics as well.
+   - **alertmanager.yml:** is configured with default receiver as devops team which receive all the alerts.
+   - **alertruls.yml:** is configured to monitor all the error queues(with error in the name) and send alerts to devops team.
 
 **http://serverip:9090 :prometheus**  
 **http://serverip:9093 :alertmanager**
